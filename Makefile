@@ -35,6 +35,9 @@ clean:
 	ocamlyacc $<
 
 
+
 .PHONY: ext
 ext:
-	git submodule add https://github.com/ColinShaw/ocaml-v4l.git
+	# git submodule add https://github.com/ColinShaw/ocaml-v4l.git
+	git submodule init
+	git submodule update
