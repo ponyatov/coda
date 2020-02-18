@@ -9,6 +9,6 @@
 %type <unit> grammar
 %%
 
-grammar:              {                     }
-grammar: grammar EOF  { exit            0   }
-grammar: grammar CHAR { printf "<%c> "  $2  }
+grammar:              {                       }
+grammar: grammar EOF  { printf "\n" ; exit 0  }
+grammar: grammar CHAR { printf "<%c> "  $2    }
