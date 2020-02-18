@@ -1,3 +1,6 @@
 [submodule "ocaml-v4l"]
 	path = ocaml-v4l
 	url = https://github.com/ColinShaw/ocaml-v4l.git
+[submodule "fpvip"]
+	path = fpvip
+	url = git@bitbucket.org:ponyatov/fpvip.git

@@ -39,5 +39,6 @@ clean:
 .PHONY: ext
 ext:
 	# git submodule add https://github.com/ColinShaw/ocaml-v4l.git
+	# git submodule add git@bitbucket.org:ponyatov/fpvip.git
 	git submodule init
 	git submodule update
