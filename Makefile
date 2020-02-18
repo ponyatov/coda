@@ -11,6 +11,11 @@ all: ./$(MODULE) $(MODULE).ini
 ./$(MODULE): frame.cmo c_lexer.cmo c_parser.cmo main.cmo
 	ocamlc -o $@ $^
 
+main.cmo: main.ml c_parser.cmi c_lexer.cmi
+	ocamlc -c $<
+%_lexer.cmo: %_lexer.ml %_parser.cmi
+	ocamlc -c $<
+
 %.cmi: %.mli
 	ocamlc -c $<
 %.cmo: %.ml
