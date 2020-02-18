@@ -8,10 +8,10 @@ REL = $(shell git rev-parse --short=4 HEAD)
 all: ./$(MODULE) $(MODULE).ini
 	./$^
 
-./$(MODULE): frame.cmo c_lexer.cmo c_parser.cmo main.cmo
+./$(MODULE): frame.cmo ini_lexer.cmo ini_parser.cmo ini_main.cmo
 	ocamlc -o $@ $^
 
-main.cmo: main.ml c_parser.cmi c_lexer.cmi
+%_main.cmo: %_main.ml %_parser.cmi %_lexer.cmi
 	ocamlc -c $<
 %_lexer.cmo: %_lexer.ml %_parser.cmi
 	ocamlc -c $<
