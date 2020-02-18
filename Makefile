@@ -33,3 +33,8 @@ clean:
 	ocamllex -q $<
 %_parser.ml %_parser.mli: %_parser.mly
 	ocamlyacc $<
+
+
+.PHONY: ext
+ext:
+	git submodule add https://github.com/ColinShaw/ocaml-v4l.git

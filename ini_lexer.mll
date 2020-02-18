@@ -3,5 +3,7 @@
 }
 
 rule token = parse
-  | _   as x  { CHAR(x) }
-  | eof       { EOF     }
+  | '#'[^'\n']*'\n'       { token lexbuf  }
+  | ['\r''\n']+           { EOL           }
+  | _               as x  { CHAR(x)       }
+  | eof                   { EOF           }
