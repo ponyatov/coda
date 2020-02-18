@@ -1,0 +1,9 @@
+*~
+*.swp
+*.log
+
+*.cm?
+*.mli
+*lexer.ml
+*parser.ml
+coda
