@@ -42,3 +42,11 @@ ext:
 	# git submodule add git@bitbucket.org:ponyatov/fpvip.git
 	git submodule init
 	git submodule update
+
+
+.PHONY: merge release zip
+
+release:
+	git tag $(NOW)-$(REL)
+	git push -v && git push -v --tags
+	git checkout shadow
