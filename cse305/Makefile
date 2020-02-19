@@ -2,5 +2,6 @@ CWD    = $(CURDIR)
 MODULE = $(notdir $(CWD))
 
 .PHONY: all
-all: ./$(MODULE).ml
-	ocaml ./$^
+all: $(MODULE).out
+$(MODULE).out: ./$(MODULE).ml $(MODULE).in
+	ocaml ./$^ $@
